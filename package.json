@@ -1,0 +1,27 @@
+{
+  "name": "multi-site-hosting",
+  "version": "1.0.0",
+  "description": "A scalable multi-site hosting platform",
+  "main": "backend/server.js",
+  "scripts": {
+    "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm run dev\"",
+    "build": "npm run build:backend && npm run build:frontend",
+    "build:backend": "cd backend && npm run build",
+    "build:frontend": "cd frontend && npm run build",
+    "start": "concurrently \"cd backend && npm start\" \"cd frontend && npm start\"",
+    "test": "concurrently \"cd backend && npm test\" \"cd frontend && npm test\"",
+    "docker:build": "docker-compose build",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down"
+  },
+  "keywords": [
+    "hosting",
+    "multi-site",
+    "platform"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
